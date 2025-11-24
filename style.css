@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&family=Story+Script&display=swap");
+h1 {
+  color: rgb(0, 89, 255);
+  padding-left: 10px;
+}
+header {
+  width: 100%;
+}
+.zagolovok {
+  display: flex;
+  background: linear-gradient(to right, rgb(208, 255, 0), rgb(0, 167, 0));
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
+body {
+  margin: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menu input {
+  width: 40%;
+  font-size: 20px;
+}
+section {
+  background-color: rgb(208, 255, 0);
+  width: 80%;
+  border-radius: 20px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+section p {
+  flex: 10;
+  padding: 20px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+section img {
+  flex: 1;
+  width: 50%;
+  padding: 20px;
+}
+
+p {
+  color: rgb(0, 173, 147);
+}
+
+footer {
+  width: 100%;
+  background-color: rgb(48, 194, 48);
+  display: flex;
+  justify-content: center;
+}
+footer p {
+  color: aliceblue;
+}
+.menu2 ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  background-color: rgb(192, 255, 82);
+  height: 50px;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  font-size: 23px;
+}
+
+@media (max-width: 480px) {
+  section {
+    flex-direction: column;
+    width: 60%;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+  section img {
+    width: 80%;
+  }
+}
