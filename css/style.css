@@ -87,6 +87,10 @@ a {
   font-size: 23px;
 }
 
+#pog{
+  flex-wrap: wrap;
+}
+
 @media (max-width: 480px) {
   section {
     flex-direction: column;
