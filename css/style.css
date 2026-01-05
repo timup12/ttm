@@ -87,11 +87,15 @@ a {
   font-size: 23px;
 }
 
-#pog{
+#pog {
   flex-wrap: wrap;
 }
 
 @media (max-width: 480px) {
+  .menu2 ul {
+    height: 115px;
+    justify-content: center;
+  }
   section {
     flex-direction: column;
     width: 60%;
@@ -103,4 +107,50 @@ a {
   section img {
     width: 80%;
   }
+  .burger-menu {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+  }
+  .burger-menu::before,
+  .burger-menu::after {
+    content: ""; /* пустой контент */
+    background: #fff; /*цвет бургера*/
+    position: absolute; /* позиция для общего блока*/
+    width: 100%; /* ширина*/
+    height: 2px; /* толщина полосок бургера */
+  }
+
+  .burger-menu::before {
+    top: 0; /* расположение верхней линии бургера */
+  }
+
+  .burger-menu span {
+    /*средняя линия в виде span*/
+    background: #000000;
+    position: absolute;
+    width: 100%;
+    top: 9px;
+    height: 2px;
+  }
+  .burger-menu::after {
+    bottom: 0; /* расположение нижней линии бургера */
+  }
+  .main-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+  background: #272727;
+  border: 1px solid #fff;
+  padding: 20px 10px;
+  transform: translatex(100%);
+}
+
+.nav-list {
+ flex-direction: column;
+ text-align: right;
+}
 }

@@ -1,3 +1,9 @@
+let burger = document.queryselector('.burger-menu' )
+let nav = document.querySelector('.main-nav')
+burger.addEventListener ('click', function() {
+burger.classList.toggle('active');
+nav.classlist.toggle('active');
+})
 let FC=document.getElementById('FC');
 let pog=document.getElementById('pog');
 FC.addEventListener('change',()=>{
