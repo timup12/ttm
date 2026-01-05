@@ -15,9 +15,12 @@
           <input type="text" placeholder="введите текст для поиска..." />
         </div>
       </div>
-      <div class='burger-menu'><span></span><div>
+      <button class="burger-menu" type="button" aria-label="Открыть меню" aria-controls="main-nav" aria-expanded="false">
+        <span></span>
+      </button>
+      <div class="nav-backdrop" hidden></div>
       <div class="menu2">
-        <nav class="main-nav">
+        <nav id="main-nav" class="main-nav" aria-label="Главное меню">
           <ul class="nav-list">
             <li class='list-item'><a href="">новости</a></li>
             <li class='list-item'><a href="#pug">таблицы</a></li>

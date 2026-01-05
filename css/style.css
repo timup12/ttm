@@ -154,3 +154,148 @@ a {
  text-align: right;
 }
 }
+
+
+
+/* --- Mobile-first nav / burger improvements (2026-01) --- */
+header { position: relative; }
+
+.burger-menu{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  margin-left: 8px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.burger-menu::before,
+.burger-menu::after,
+.burger-menu span{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 28px;
+  height: 2px;
+  background: #ffffff;
+  transition: transform .25s ease, opacity .2s ease, top .25s ease, bottom .25s ease;
+}
+
+.burger-menu{ position: relative; }
+.burger-menu::before{ top: 14px; }
+.burger-menu span{ top: 20px; }
+.burger-menu::after{ bottom: 14px; }
+
+.burger-menu.active::before{ top: 20px; transform: rotate(45deg); }
+.burger-menu.active span{ opacity: 0; }
+.burger-menu.active::after{ bottom: 20px; transform: rotate(-45deg); }
+
+.nav-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 998;
+}
+
+.main-nav{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(78vw, 360px);
+  background: #272727;
+  border-left: 1px solid rgba(255,255,255,.25);
+  padding: 18px 14px;
+  transform: translateX(110%);
+  transition: transform .25s ease;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.main-nav.active{ transform: translateX(0); }
+
+.main-nav .nav-list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: right;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav .nav-list .list-item{ list-style: none; }
+
+/* Desktop: show nav inline, hide burger/backdrop */
+
+/* --- Burger visibility & geometry fixes (mobile) --- */
+@media (max-width: 480px){
+  .burger-menu{
+    width: 32px;
+    height: 24px;
+    padding: 0;
+    margin: 10px;
+    border: 0;
+    background: transparent;
+    color: #111; /* visible on white + gradient */
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .burger-menu::before,
+  .burger-menu::after,
+  .burger-menu span{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform .25s ease, opacity .2s ease, top .25s ease, bottom .25s ease;
+  }
+  .burger-menu::before{ top: 4px; }
+  .burger-menu span{ top: 11px; }
+  .burger-menu::after{ bottom: 4px; }
+
+  .burger-menu.active::before{ top: 11px; transform: rotate(45deg); }
+  .burger-menu.active span{ opacity: 0; }
+  .burger-menu.active::after{ bottom: 11px; transform: rotate(-45deg); }
+
+  .burger-menu:focus-visible{
+    outline: 2px solid rgba(0,0,0,.35);
+    outline-offset: 4px;
+    border-radius: 8px;
+  }
+}
+
+@media (min-width: 481px){
+  .burger-menu{ display: none; }
+  .nav-backdrop{ display: none !important; }
+
+  .main-nav{
+    position: static;
+    height: auto;
+    width: auto;
+    transform: none;
+    transition: none;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .main-nav .nav-list{
+    flex-direction: row;
+    gap: 16px;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Small UX polish */
+body.menu-open{ overflow: hidden; }
