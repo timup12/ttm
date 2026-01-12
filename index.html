@@ -6,6 +6,10 @@
     <title>TTM</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="images/favicon-32x32.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <header>
@@ -15,17 +19,23 @@
           <input type="text" placeholder="введите текст для поиска..." />
         </div>
       </div>
-      <button class="burger-menu" type="button" aria-label="Открыть меню" aria-controls="main-nav" aria-expanded="false">
+      <button
+        class="burger-menu"
+        type="button"
+        aria-label="Открыть меню"
+        aria-controls="main-nav"
+        aria-expanded="false"
+      >
         <span></span>
       </button>
       <div class="nav-backdrop" hidden></div>
       <div class="menu2">
         <nav id="main-nav" class="main-nav" aria-label="Главное меню">
           <ul class="nav-list">
-            <li class='list-item'><a href="">новости</a></li>
-            <li class='list-item'><a href="#pug">таблицы</a></li>
-            <li class='list-item'><a href="">игры</a></li>
-            <li class='list-item'><a href="#pog">статистика</a></li>
+            <li class="list-item"><a href="">новости</a></li>
+            <li class="list-item"><a href="#pug">таблицы</a></li>
+            <li class="list-item"><a href="">игры</a></li>
+            <li class="list-item"><a href="#pog">статистика</a></li>
           </ul>
         </nav>
       </div>
@@ -62,6 +72,33 @@
           «Ливерпуль» за 125 млн евро (116 млн) фунтов
         </p>
       </section>
+      <section class="slider-section">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="images/1.jpg" alt="pug" />
+            </div>
+
+            <div class="swiper-slide">
+              <img src="images/2.jpg" alt="player" />
+            </div>
+
+            <div class="swiper-slide">
+              <img src="images/3.jpg" alt="logo" />
+            </div>
+          </div>
+
+          <!-- Навигация -->
+
+          <div class="swiper-button-prev"></div>
+
+          <div class="swiper-button-next"></div>
+
+          <!-- Пагинация -->
+
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
       <section id="pug">
         <div
           id="widget-62h9midfte7e"
@@ -96,14 +133,13 @@
         </div>
       </section>
       <select name="FC" id="FC">
-          <option value="Rubin Kazan">Rubin Kazan</option>
-          <option value="FC Rostov">FC Rostov</option>
-          <option value="FC Krasnodar">FC Krasnodar</option>
-          <option value="PFC Sochi">PFC Sochi</option>
-          <option value="CSKA Moscow">CSKA Moscow</option>
-        </select>
+        <option value="Rubin Kazan">Rubin Kazan</option>
+        <option value="FC Rostov">FC Rostov</option>
+        <option value="FC Krasnodar">FC Krasnodar</option>
+        <option value="PFC Sochi">PFC Sochi</option>
+        <option value="CSKA Moscow">CSKA Moscow</option>
+      </select>
       <section id="pog">
-
         <!--  <script
             src="https://widgets.scoreaxis.com/api/football/team-top-players/62321b29adaf4b2bd73deb4a?widgetId=cl3rmineuiwm&lang=ru&playersCount=18&goalsBlock=1&assistsBlock=1&cardsBlock=1&links=1&font=heebo&fontSize=14&widgetWidth=auto&widgetHeight=auto&bodyColor=%23ffffff&textColor=%23141416&linkColor=%23141416&borderColor=%23000000&tabColor=%23ff0000"
             src="https://widgets.scoreaxis.com/api/football/team-info/62321b29adaf4b2bd73deb4a?widgetId=ukteminf6ti0&lang=ru&statsBlock=1&playersBlock=0&matchesBlock=1&links=1&font=heebo&fontSize=14&widgetWidth=auto&widgetHeight=auto&bodyColor=%23ffffff&textColor=%23141416&linkColor=%23141416&borderColor=%23000000&tabColor=%23fafcff"
@@ -114,7 +150,6 @@
             async
           ></script> -->
 
-        
         <div
           id="widget-cl3rmineuiwm"
           class="scoreaxis-widget"
@@ -1106,6 +1141,7 @@
     <footer>
       <p><b>01.09.2025 © pug</b></p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
